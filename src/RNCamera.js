@@ -496,6 +496,10 @@ export default class Camera extends React.Component<PropsType, StateType> {
       recordAudioPermissionStatus: RecordAudioPermissionStatusEnum.PENDING_AUTHORIZATION,
     };
   }
+  
+  setNativeProps(props) {
+    this._cameraRef && this._cameraRef.setNativeProps(props)
+  }
 
   async takePictureAsync(options?: PictureOptions) {
     if (!options) {
